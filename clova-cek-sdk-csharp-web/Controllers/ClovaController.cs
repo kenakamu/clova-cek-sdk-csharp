@@ -25,20 +25,20 @@ namespace clova_cek_sdk_csharp_web.Controllers
             switch (request.Request.Type)
             {
                 case RequestType.LaunchRequest:
-                    response.AddText("Welcome to CEK!");
+                    response.AddText("Welcome to CEK!", Lang.En);
                     response.Response.ShouldEndSession = false;
                     break;
                 case RequestType.IntentRequest:
                     switch (request.Request.Intent.Name)
                     {
                         case "Clova.YesIntent":
-                            response.AddText("Yes!");
+                            response.AddText("Yes!", Lang.En);
                             break;
                         case "Clova.NoIntent":
-                            response.AddText("No...");
+                            response.AddText("No...", Lang.En);
                             break;
                         case "Clova.GuideIntent":
-                            response.AddText("Let me explain how to use it!");
+                            response.AddText("Let me explain how to use it!", Lang.En);
                             break;
                     }
                     break;
