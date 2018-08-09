@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clova-cek-sdk-csharp", "clova-cek-sdk-csharp\clova-cek-sdk-csharp.csproj", "{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clova-cek-sdk-csharp-web", "clova-cek-sdk-csharp-web\clova-cek-sdk-csharp-web.csproj", "{D353E79E-30C5-4286-8E8A-D14BE92B47C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21AE20C7-AE67-4437-AE8A-5D628D083867}
+	EndGlobalSection
+EndGlobal
