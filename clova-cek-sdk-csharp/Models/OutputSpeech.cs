@@ -6,6 +6,7 @@ namespace ClovaCEKCsharp.Models
     /// <summary>
     /// 音声に合成する情報を含んでいるオブジェクト。合成された音声はCICを介してクライアントに渡されます。
     /// </summary>
+    [JsonConverter(typeof(OutputSpeechJsonConverter))]
     public class OutputSpeech
     {
         /// <summary>
@@ -23,6 +24,7 @@ namespace ClovaCEKCsharp.Models
         /// </summary>
         [JsonProperty("values")]
         public List<SpeechInfoObject> Values { get; set; }
+       
         /// <summary>
         /// 画面を持たないクライアントデバイスに渡す際に使用されます。詳細音声情報を含んでいます。
         /// </summary>
