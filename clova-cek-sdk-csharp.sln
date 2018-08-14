@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clova-cek-sdk-csharp", "clova-cek-sdk-csharp\clova-cek-sdk-csharp.csproj", "{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clova-cek-sdk-csharp", "clova-cek-sdk-csharp\clova-cek-sdk-csharp.csproj", "{57FDA4EA-8E1C-4BFF-9CDF-87DB31D11A06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clova-cek-sdk-csharp-web", "clova-cek-sdk-csharp-web\clova-cek-sdk-csharp-web.csproj", "{D353E79E-30C5-4286-8E8A-D14BE92B47C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clova-cek-sdk-csharp-web", "clova-cek-sdk-csharp-web\clova-cek-sdk-csharp-web.csproj", "{D353E79E-30C5-4286-8E8A-D14BE92B47C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

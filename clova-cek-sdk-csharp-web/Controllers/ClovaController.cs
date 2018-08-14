@@ -13,16 +13,22 @@ namespace clova_cek_sdk_csharp_web.Controllers
         {
             client = new ClovaClient();
         }
-        // POST api/values
+        // POST api/clova
         [HttpPost]
         public async Task<IActionResult> Post()
         {
             var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body);
             var response = new CEKResponse();
+            
+            // adding session information
+            var mySessionValue = request.GetSessionAttribute("mySessionKey", "defaultValue");
+            // get session information by specifying default value in case no session information
+            response.AddSessoin("mySessionKey", "mySessionValue");
 
             switch (request.Request.Type)
             {
                 case RequestType.LaunchRequest:
+                    // Single Text Reply
                     response.AddText("Welcome to CEK", Lang.En);
                     response.Response.ShouldEndSession = false;
                     break;
@@ -34,16 +40,27 @@ namespace clova_cek_sdk_csharp_web.Controllers
                     switch (request.Request.Intent.Name)
                     {
                         case "Clova.YesIntent":
-                            response.AddText("Yes!", Lang.En);
+                            // Add single URL Response and Text Reprompt
+                            response.AddUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
+                            response.AddRepromptText("Tell me something, please", Lang.En);                            
                             response.Response.ShouldEndSession = false;
                             break;
                         case "Clova.NoIntent":
-                            response.AddText("No...", Lang.En);
+                            // Add Brief and Verbose as SpeechSet
+                            response.AddBriefText("Brief explain.", Lang.En);
+                            response.AddVerboseText("Detail explain 1.", Lang.En);
+                            response.AddVerboseText("Detail explain 2.", Lang.En);
+                            response.AddVerboseUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
                             response.Response.ShouldEndSession = false;
                             break;
                         case "Clova.GuideIntent":
+                            // Add multiple Reposonses and Reprompts
                             response.AddText("Sure!", Lang.En);
+                            response.AddUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
                             response.AddText("Let me explain how to use it!", Lang.En);
+                            response.AddRepromptText("Did you understand?", Lang.En);
+                            response.AddRepromptText("Now tell me what you want.", Lang.En);
+                            response.AddRepromptUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3", Lang.En);
                             response.Response.ShouldEndSession = false;
                             break;
                     }

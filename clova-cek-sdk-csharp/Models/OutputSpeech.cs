@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ClovaCEKCsharp.Models
 {
     /// <summary>
     /// 音声に合成する情報を含んでいるオブジェクト。合成された音声はCICを介してクライアントに渡されます。
     /// </summary>
-    [JsonConverter(typeof(OutputSpeechJsonConverter))]
     public class OutputSpeech
     {
         /// <summary>
@@ -22,9 +23,22 @@ namespace ClovaCEKCsharp.Models
         /// <summary>
         /// クライアントデバイスで出力する音声情報を持っているオブジェクトまたはオブジェクト配列
         /// </summary>
-        [JsonProperty("values")]
+        [JsonIgnore]
         public List<SpeechInfoObject> Values { get; set; }
-       
+        [JsonProperty("values")]
+        private object values
+        {
+            get
+            {
+                if (Values == null || Values.Count == 0)
+                    return null;
+                else if (Values.Count == 1)
+                    return JObject.FromObject(Values.First());
+                else
+                    return JArray.FromObject(Values);
+            }
+        }
+
         /// <summary>
         /// 画面を持たないクライアントデバイスに渡す際に使用されます。詳細音声情報を含んでいます。
         /// </summary>

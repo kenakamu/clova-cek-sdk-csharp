@@ -15,9 +15,19 @@ namespace ClovaCEKCsharp
     /// - convert request from Clova and return CEK Response
     /// </summary>
     public class ClovaClient
-    {        
+    {
         static private HttpClient _httpClient;
-        private HttpClient httpClient { get { return _httpClient ?? new HttpClient(); } }
+        static private string cert;
+        private HttpClient httpClient
+        {
+            get
+            {
+                if (_httpClient == null)
+                    _httpClient = new HttpClient();
+
+                return _httpClient;
+            }
+        }
         public ClovaClient()
         {
         }
@@ -34,7 +44,9 @@ namespace ClovaCEKCsharp
             if (string.IsNullOrEmpty(signatureCEK))
                 throw new Exception("Signature missing");
 
-            var cert = await httpClient.GetStringAsync("https://clova-cek-requests.line.me/.well-known/signature-public-key.pem");
+            if (string.IsNullOrEmpty(cert))
+                cert = await httpClient.GetStringAsync("https://clova-cek-requests.line.me/.well-known/signature-public-key.pem");
+            
             RSACryptoServiceProvider provider = PemKeyUtils.GetRSAProviderFromPemString(cert.Trim());
             if (!provider.VerifyData(body, Convert.FromBase64String(signatureCEK), HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1))
                 throw new Exception("Invalid Signature");
@@ -64,9 +76,9 @@ namespace ClovaCEKCsharp
         /// <returns>CEK Response</returns>
         public async Task<CEKRequest> GetRequest(string signatureCEK, Stream body)
         {
-            byte[] bodyContent = ConvertStreamToByteArray(body);       
+            byte[] bodyContent = ConvertStreamToByteArray(body);
             await VerifySignature(signatureCEK, bodyContent);
-            return JsonConvert.DeserializeObject<CEKRequest>(Encoding.UTF8.GetString(bodyContent));         
-        }        
+            return JsonConvert.DeserializeObject<CEKRequest>(Encoding.UTF8.GetString(bodyContent));
+        }
     }
 }

@@ -26,31 +26,79 @@ var response = new CEKResponse();
 
 ```csharp
 response.AddText("こんにちは!");
-response.AddUri("https://line.me");
+response.AddUrl("https://dummy.domain/myaudio.mp3");
 response.AddText("Hi!", Lang.En);
-response.AddUri("https://line.me", Lang.En);
+response.AddUrl("https://dummy.domain/myaudio.mp3", Lang.En);
 ```
 
-5\. Check request type and handle appropriately.
+5\. Add Brief/Verbose.
+
+```csharp
+response.AddBriefText("Brief explain.", Lang.En);
+response.AddVerboseText("Detail explain 1.", Lang.En);
+response.AddVerboseText("Detail explain 2.", Lang.En);
+response.AddVerboseUrl("https://dummy.domain/myaudio.mp3");
+```
+
+6\. Add Reprompt.
+
+```csharp
+response.AddRepromptText("Tell me something, please", Lang.En);
+response.AddRepromptUrl("https://dummy.domain/myaudio.mp3", Lang.En);
+```
+7\. Add session value.
+
+```csharp
+response.SetSession("mySessionKey", "mySessionValue");
+```
+
+8\. Get the session value. The default value returns if no session infromation exists.
+
+```csharp
+var mySessionValue = request.GetSessionAttribute("mySessionValue", "defaultValue");
+```
+
+# Sample
+Following sample illustrate how to check incoming request type and handle appropriately.
 
 ```csharp
 switch (request.Request.Type)
 {
     case RequestType.LaunchRequest:
-        response.AddText("Welcome to CEK!", Lang.En);
+        // Single Text Reply
+        response.AddText("Welcome to CEK", Lang.En);
         response.Response.ShouldEndSession = false;
+        break;
+    case RequestType.SessionEndedRequest:
+        response.AddText("Good bye!", Lang.En);
+        response.Response.ShouldEndSession = true;
         break;
     case RequestType.IntentRequest:
         switch (request.Request.Intent.Name)
         {
             case "Clova.YesIntent":
-                response.AddText("Yes!", Lang.En);
+                // Add single URL Response and Text Reprompt
+                response.AddUrl("https://dummy.domain/myaudio.mp3");
+                response.AddRepromptText("Tell me something, please", Lang.En);
+                response.Response.ShouldEndSession = false;
                 break;
             case "Clova.NoIntent":
-                response.AddText("No...", Lang.En);
+                // Add Brief and Verbose as SpeechSet
+                response.AddBriefText("Brief explain.", Lang.En);
+                response.AddVerboseText("Detail explain 1.", Lang.En);
+                response.AddVerboseText("Detail explain 2.", Lang.En);
+                response.AddVerboseUrl("https://dummy.domain/myaudio.mp3");
+                response.Response.ShouldEndSession = false;
                 break;
             case "Clova.GuideIntent":
+                // Add multiple Reposonses and Reprompts
+                response.AddText("Sure!", Lang.En);
+                response.AddUrl("https://dummy.domain/myaudio.mp3");
                 response.AddText("Let me explain how to use it!", Lang.En);
+                response.AddRepromptText("Did you understand?", Lang.En);
+                response.AddRepromptText("Now tell me what you want.", Lang.En);
+                response.AddRepromptUrl("https://dummy.domain/myaudio.mp3", Lang.En);
+                response.Response.ShouldEndSession = false;
                 break;
         }
         break;

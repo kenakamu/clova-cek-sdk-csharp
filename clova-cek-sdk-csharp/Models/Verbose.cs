@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ClovaCEKCsharp.Models
 {
@@ -16,7 +18,20 @@ namespace ClovaCEKCsharp.Models
         /// <summary>
         /// クライアントデバイスで出力する詳細音声情報を持っているオブジェクトまたはオブジェクト配列
         /// </summary>
-        [JsonProperty("values")]
+        [JsonIgnore]
         public List<SpeechInfoObject> Values { get; set; }
+        [JsonProperty("values")]
+        private object values
+        {
+            get
+            {
+                if (Values == null || Values.Count == 0)
+                    return null;
+                else if (Values.Count == 1)
+                    return JObject.FromObject(Values.First());
+                else
+                    return JArray.FromObject(Values);
+            }
+        }
     }
 }

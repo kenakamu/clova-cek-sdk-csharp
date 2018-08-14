@@ -28,5 +28,19 @@ namespace ClovaCEKCsharp.Models
         /// </summary>
         [JsonProperty("session")]
         public Session Session { get; set; }
+
+        /// <summary>
+        /// セッション情報から特定の値を取得する
+        /// </summary>
+        /// <param name="key">セッション情報のキー</param>
+        /// <param name="defaultValue">セッション情報の既定値</param>
+        /// <returns>セッション情報の値</returns>
+        public object GetSessionAttribute(string key, object defaultValue = null)
+        {
+            if (Session.SessionAttributes.ContainsKey(key))
+                return Session.SessionAttributes[key];
+            else
+                return defaultValue;
+        }
     }
 }
