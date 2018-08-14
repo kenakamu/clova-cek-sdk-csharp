@@ -76,15 +76,14 @@ namespace ClovaCEKCsharp.Models
         /// 音声情報を返す - URL
         /// </summary>
         /// <param name="url">音声ファイルのパス</param>
-        /// <param name="lang">言語</param>
-        public void AddUrl(string url, Lang lang = Lang.Ja)
+        public void AddUrl(string url)
         {
             if (Response.OutputSpeech.Values.Count > 0)
                 Response.OutputSpeech.Type = OutputSpeechType.SpeechList;
             Response.OutputSpeech.Values.Add(new SpeechInfoObject()
             {
                 Type = SpeechInfoType.URL,
-                Lang = lang,
+                Lang = null,
                 Value = url
             });
         }
@@ -125,7 +124,7 @@ namespace ClovaCEKCsharp.Models
         /// </summary>
         /// <param name="url">音声ファイルのパス</param>
         /// <param name="lang">言語</param>
-        public void AddRepromptUrl(string url, Lang lang = Lang.Ja)
+        public void AddRepromptUrl(string url)
         {
             if (Response.Reprompt.OutputSpeech.Values.Count > 0)
                 Response.Reprompt.OutputSpeech.Type = OutputSpeechType.SpeechList;
@@ -133,7 +132,7 @@ namespace ClovaCEKCsharp.Models
             Response.Reprompt.OutputSpeech.Values.Add(new SpeechInfoObject()
             {
                 Type = SpeechInfoType.URL,
-                Lang = lang,
+                Lang = null,
                 Value = url
             });
         }
@@ -165,7 +164,7 @@ namespace ClovaCEKCsharp.Models
         /// </summary>
         /// <param name="url">音声ファイルのパス</param>
         /// <param name="lang">言語</param>
-        public void AddBriefUrl(string url, Lang lang = Lang.Ja)
+        public void AddBriefUrl(string url)
         {
             Response.OutputSpeech.Type = OutputSpeechType.SpeechSet;
             Response.OutputSpeech.Values = null;
@@ -177,7 +176,7 @@ namespace ClovaCEKCsharp.Models
             Response.OutputSpeech.Brief = new SpeechInfoObject()
             {
                 Type = SpeechInfoType.URL,
-                Lang = lang,
+                Lang = null,
                 Value = url
             };
         }
@@ -205,7 +204,7 @@ namespace ClovaCEKCsharp.Models
         /// </summary>
         /// <param name="url">音声ファイルのパス</param>
         /// <param name="lang">言語</param>
-        public void AddVerboseUrl(string url, Lang lang = Lang.Ja)
+        public void AddVerboseUrl(string url)
         {
             if (Response.OutputSpeech.Verbose.Values.Count > 0)
                 Response.OutputSpeech.Verbose.Type = OutputSpeechType.SpeechList;
@@ -213,7 +212,7 @@ namespace ClovaCEKCsharp.Models
             Response.OutputSpeech.Verbose.Values.Add(new SpeechInfoObject()
             {
                 Type = SpeechInfoType.URL,
-                Lang = lang,
+                Lang = null,
                 Value = url
             });
         }

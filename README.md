@@ -44,7 +44,7 @@ response.AddVerboseUrl("https://dummy.domain/myaudio.mp3");
 
 ```csharp
 response.AddRepromptText("Tell me something, please", Lang.En);
-response.AddRepromptUrl("https://dummy.domain/myaudio.mp3", Lang.En);
+response.AddRepromptUrl("https://dummy.domain/myaudio.mp3");
 ```
 7\. Add session value.
 
@@ -97,7 +97,7 @@ switch (request.Request.Type)
                 response.AddText("Let me explain how to use it!", Lang.En);
                 response.AddRepromptText("Did you understand?", Lang.En);
                 response.AddRepromptText("Now tell me what you want.", Lang.En);
-                response.AddRepromptUrl("https://dummy.domain/myaudio.mp3", Lang.En);
+                response.AddRepromptUrl("https://dummy.domain/myaudio.mp3");
                 response.Response.ShouldEndSession = false;
                 break;
         }

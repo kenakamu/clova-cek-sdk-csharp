@@ -6,7 +6,7 @@ namespace ClovaCEKCsharp.Models
     /// <summary>
     /// 音声を合成する際に使用する言語のコード。
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter), new object[] { true })]
+    [JsonConverter(typeof(StringEnumConverter), new object[] { true })]  
     public enum Lang
     {
         /// <summary>

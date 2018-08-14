@@ -10,7 +10,7 @@ namespace ClovaCEKCsharp.Models
         /// <summary>
         /// 音声を合成する際に使用する言語のコード。
         /// </summary>
-        [JsonProperty("lang")]
+        [JsonProperty("lang", NullValueHandling = NullValueHandling.Include)]
         public Lang? Lang { get; set; }
         /// <summary>
         /// 再生する音声のタイプ。このフィールドの値によって、valueフィールドの値の形式が異なります。現在、次の値を持ちます。

@@ -60,7 +60,7 @@ namespace clova_cek_sdk_csharp_web.Controllers
                             response.AddText("Let me explain how to use it!", Lang.En);
                             response.AddRepromptText("Did you understand?", Lang.En);
                             response.AddRepromptText("Now tell me what you want.", Lang.En);
-                            response.AddRepromptUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3", Lang.En);
+                            response.AddRepromptUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
                             response.Response.ShouldEndSession = false;
                             break;
                     }
