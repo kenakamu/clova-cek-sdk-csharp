@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace ClovaCEKCsharp.Models
+namespace ClovaCEKCSharp.Models
 {
     /// <summary>
     /// プレイヤーの状態を示す値です。

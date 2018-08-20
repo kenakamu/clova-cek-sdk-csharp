@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCsharp.Models
+namespace ClovaCEKCSharp.Models
 {
     /// <summary>
     /// SpeechInfoObjectオブジェクトはレスポンスメッセージのresponse.outputSpeechで再使用されるオブジェクトです。ユーザーに出力する音声情報の最も小さな単位である単文レベルの発話情報です。このオブジェクトは、次のフィールドを持ちます。

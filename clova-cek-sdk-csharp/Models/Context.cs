@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCsharp.Models
+namespace ClovaCEKCSharp.Models
 {
     /// <summary>
     /// クライアントのコンテキスト情報を持っているオブジェクト

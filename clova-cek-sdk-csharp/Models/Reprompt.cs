@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCsharp.Models
+namespace ClovaCEKCSharp.Models
 {
     /// <summary>
     /// ユーザーの追加の発話を促す音声情報を含んでいるオブジェクト。response.repromptフィールドを使用すると、ユーザーにマルチターン対話を続けるか尋ねたり、または必須情報を話すように促すことができます。通常、マルチターン対話を行う際、ユーザーが追加の発話をしないと、入力待ち時間が過ぎ、マルチターン対話が自動的に終了します。

@@ -1,4 +1,4 @@
-﻿using ClovaCEKCsharp.Models;
+﻿using ClovaCEKCSharp.Models;
 using Newtonsoft.Json;
 using System;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClovaCEKCsharp
+namespace ClovaCEKCSharp
 {
     /// <summary>
     /// Client to handle followings

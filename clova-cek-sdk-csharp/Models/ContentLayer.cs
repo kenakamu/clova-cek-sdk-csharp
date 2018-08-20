@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCsharp.Models
+namespace ClovaCEKCSharp.Models
 {
     /// <summary>
     /// ディスプレイでコンテンツが表示される領域の解像度情報を持つオブジェクト。context.System.device.display.sizeの値が"none"の場合、このフィールドは省略されます。

@@ -1,5 +1,5 @@
-﻿using ClovaCEKCsharp;
-using ClovaCEKCsharp.Models;
+﻿using ClovaCEKCSharp;
+using ClovaCEKCSharp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

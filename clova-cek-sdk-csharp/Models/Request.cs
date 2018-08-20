@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCsharp.Models
+namespace ClovaCEKCSharp.Models
 {
     /// <summary>
     /// 解析されたユーザーの発話情報を持っているオブジェクト。リクエストタイプによって、構成されるフィールドが異なります。

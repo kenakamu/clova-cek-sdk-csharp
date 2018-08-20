@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <RootNamespace>ClovaCEKCsharp</RootNamespace>
-    <AssemblyName>ClovaCEKCsharp</AssemblyName>
+    <RootNamespace>ClovaCEKCSharp</RootNamespace>
+    <AssemblyName>ClovaCEKCSharp</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
