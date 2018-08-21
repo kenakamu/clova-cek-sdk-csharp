@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// リクエストメッセージは、次の4つのタイプがあります。リクエストのタイプによって、リクエストメッセージのrequestオブジェクトのフィールドの構成が異なります。

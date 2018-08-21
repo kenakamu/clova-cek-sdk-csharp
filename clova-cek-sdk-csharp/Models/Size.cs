@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// ディスプレイ装置の解像度を示す値。あらかじめ指定された値または任意の解像度のサイズを表す値("custom")が入力されています。しかし、ディスプレイ装置がないことを表す値("none")が入力されていることもあります。

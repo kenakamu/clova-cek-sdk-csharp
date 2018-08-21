@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// CEK esponse Message
@@ -24,6 +24,19 @@ namespace ClovaCEKCSharp.Models
         /// </summary>
         [JsonProperty("version")]
         public string Version { get; set; }
+
+        [JsonIgnore]
+        public bool ShouldEndSession
+        {
+            get
+            {
+                return Response.ShouldEndSession;
+            }
+            set
+            {
+                Response.ShouldEndSession = value;
+            }
+        }
 
         /// <summary>
         /// コンストラクター
@@ -93,7 +106,7 @@ namespace ClovaCEKCSharp.Models
         /// </summary>
         /// <param name="key">セッション情報のキー</param>
         /// <param name="value">セッション情報の値</param>
-        public void AddSessoin(string key, object value)
+        public void AddSession(string key, object value)
         {
             if (SessionAttributes.ContainsKey(key))
                 SessionAttributes[key] = value;

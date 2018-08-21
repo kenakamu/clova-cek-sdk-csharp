@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// クライアントがClovaに渡した情報が保存されているオブジェクト

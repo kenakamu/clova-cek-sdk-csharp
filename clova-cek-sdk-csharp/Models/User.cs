@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// クライアントデバイスに認証されたのデフォルトユーザーの情報を持っているオブジェクト

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// 再生する音声のタイプ。このフィールドの値によって、valueフィールドの値の形式が異なります。現在、次の値を持ちます。

@@ -1,5 +1,5 @@
-﻿using ClovaCEKCSharp;
-using ClovaCEKCSharp.Models;
+﻿using CEK.CSharp;
+using CEK.CSharp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -20,21 +20,21 @@ namespace clova_cek_sdk_csharp_web.Controllers
             var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body);
             var response = new CEKResponse();
             
-            // adding session information
-            var mySessionValue = request.GetSessionAttribute("mySessionKey", "defaultValue");
             // get session information by specifying default value in case no session information
-            response.AddSessoin("mySessionKey", "mySessionValue");
+            var mySessionValue = request.GetSessionAttribute("mySessionKey", "defaultValue");
+            // adding session information
+            response.AddSession("mySessionKey", "mySessionValue");
 
             switch (request.Request.Type)
             {
                 case RequestType.LaunchRequest:
                     // Single Text Reply
                     response.AddText("Welcome to CEK", Lang.En);
-                    response.Response.ShouldEndSession = false;
+                    response.ShouldEndSession = false;
                     break;
                 case RequestType.SessionEndedRequest:
                     response.AddText("Good bye!", Lang.En);
-                    response.Response.ShouldEndSession = true;
+                    response.ShouldEndSession = true;
                     break;
                 case RequestType.IntentRequest:
                     switch (request.Request.Intent.Name)
@@ -43,7 +43,7 @@ namespace clova_cek_sdk_csharp_web.Controllers
                             // Add single URL Response and Text Reprompt
                             response.AddUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
                             response.AddRepromptText("Tell me something, please", Lang.En);                            
-                            response.Response.ShouldEndSession = false;
+                            response.ShouldEndSession = false;
                             break;
                         case "Clova.NoIntent":
                             // Add Brief and Verbose as SpeechSet
@@ -51,7 +51,7 @@ namespace clova_cek_sdk_csharp_web.Controllers
                             response.AddVerboseText("Detail explain 1.", Lang.En);
                             response.AddVerboseText("Detail explain 2.", Lang.En);
                             response.AddVerboseUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
-                            response.Response.ShouldEndSession = false;
+                            response.ShouldEndSession = false;
                             break;
                         case "Clova.GuideIntent":
                             // Add multiple Reposonses and Reprompts
@@ -61,7 +61,7 @@ namespace clova_cek_sdk_csharp_web.Controllers
                             response.AddRepromptText("Did you understand?", Lang.En);
                             response.AddRepromptText("Now tell me what you want.", Lang.En);
                             response.AddRepromptUrl("https://clova-common.line-scdn.net/dice/rolling_dice_sound.mp3");
-                            response.Response.ShouldEndSession = false;
+                            response.ShouldEndSession = false;
                             break;
                     }
                     break;

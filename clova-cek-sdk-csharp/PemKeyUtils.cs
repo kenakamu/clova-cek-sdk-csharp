@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.IO;
 
-namespace ClovaCEKCSharp
+namespace CEK.CSharp
 {
     /// <summary>
     /// PEM File Reader Util

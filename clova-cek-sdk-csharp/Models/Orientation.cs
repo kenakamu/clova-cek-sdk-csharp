@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// ディスプレイ装置の向き。context.System.device.display.sizeの値が"none"の場合、このフィールドは省略されます。

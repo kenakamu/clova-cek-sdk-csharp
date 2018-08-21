@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClovaCEKCSharp.Models
+namespace CEK.CSharp.Models
 {
     /// <summary>
     /// Extensionがインテントを処理する際に要求される情報(スロット)が保存されたオブジェクト。このフィールドは、intent.nameフィールドに入力されたインテントによって構成が異なることがあります。
