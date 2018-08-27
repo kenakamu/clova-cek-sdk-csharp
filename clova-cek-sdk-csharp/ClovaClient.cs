@@ -74,10 +74,11 @@ namespace CEK.CSharp
         /// <param name="signatureCEK">Signature Header value</param>
         /// <param name="body">Content Body (Stream)</param>
         /// <returns>CEK Response</returns>
-        public async Task<CEKRequest> GetRequest(string signatureCEK, Stream body)
+        public async Task<CEKRequest> GetRequest(string signatureCEK, Stream body, bool skipValidation = false)
         {
             byte[] bodyContent = ConvertStreamToByteArray(body);
-            await VerifySignature(signatureCEK, bodyContent);
+            if(!skipValidation)
+                await VerifySignature(signatureCEK, bodyContent);
             return JsonConvert.DeserializeObject<CEKRequest>(Encoding.UTF8.GetString(bodyContent));
         }
     }

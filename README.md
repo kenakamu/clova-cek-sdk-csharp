@@ -1,6 +1,7 @@
 # Clova CEK SDK C#
 
-C# SDK for Clova Extension Kit
+C# SDK for Clova Extension Kit.
+Available on NuGet: https://www.nuget.org/packages/CEK.CSharp/
 
 # Getting Started
 
@@ -14,6 +15,12 @@ client = new ClovaClient();
 
 ```csharp
 var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body);
+```
+
+*If you want to skip validation, pass true at the end.
+
+```csharp
+var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body, true);
 ```
 
 3\. Create CEK response.

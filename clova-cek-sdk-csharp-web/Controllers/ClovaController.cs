@@ -17,7 +17,7 @@ namespace clova_cek_sdk_csharp_web.Controllers
         [HttpPost]
         public async Task<IActionResult> Post()
         {
-            var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body);
+            var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body, true);
             var response = new CEKResponse();
             
             // get session information by specifying default value in case no session information
