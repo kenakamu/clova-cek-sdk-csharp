@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace CEK.CSharp.Models
 {
@@ -41,6 +42,45 @@ namespace CEK.CSharp.Models
                 return Session.SessionAttributes[key];
             else
                 return defaultValue;
+        }
+
+        /// <summary>
+        /// セッション情報をタイプセーフに取得する。
+        /// </summary>
+        /// <typeparam name="T">セッション情報を格納する型</typeparam>
+        /// <returns>セッション情報</returns>
+        public T GetSessionAttributeAs<T>()
+            where T : class
+        {
+            if (Session == null || Session.SessionAttributes == null)
+            {
+                return null;
+            }
+
+            return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(Session.SessionAttributes));
+        }
+
+        /// <summary>
+        /// セッション情報をタイプセーフな型で設定する。
+        /// </summary>
+        /// <typeparam name="T">セッション情報の型</typeparam>
+        /// <param name="sessionValue">セッション情報</param>
+        public void SetSessionAttributeFrom<T>(T sessionValue)
+            where T : class
+        {
+            if (Session == null)
+            {
+                Session = new Session();
+            }
+
+            if (sessionValue == null)
+            {
+                Session.SessionAttributes = null;
+            }
+            else
+            {
+                Session.SessionAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(sessionValue));
+            }
         }
     }
 }
