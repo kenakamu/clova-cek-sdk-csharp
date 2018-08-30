@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clova-cek-sdk-csharp", "clo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clova-cek-sdk-csharp-web", "clova-cek-sdk-csharp-web\clova-cek-sdk-csharp-web.csproj", "{D353E79E-30C5-4286-8E8A-D14BE92B47C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clova-cek-sdk-csharp.tests", "clova-cek-sdk-csharp.tests\clova-cek-sdk-csharp.tests.csproj", "{66629E4D-0842-427E-B5C0-6E6471C41E82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D353E79E-30C5-4286-8E8A-D14BE92B47C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66629E4D-0842-427E-B5C0-6E6471C41E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66629E4D-0842-427E-B5C0-6E6471C41E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66629E4D-0842-427E-B5C0-6E6471C41E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66629E4D-0842-427E-B5C0-6E6471C41E82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
