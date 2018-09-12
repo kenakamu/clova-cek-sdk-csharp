@@ -229,5 +229,19 @@ namespace CEK.CSharp.Models
                 Value = url
             });
         }
+
+        /// <summary>
+        /// クラスの情報を SessionAttributes に設定する。
+        /// </summary>
+        /// <param name="sessionValue">セッション情報</param>
+        public void SetSessionAttributesFrom(object sessionValue)
+        {
+            SessionAttributes.Clear();
+            if (sessionValue != null)
+            {
+                JsonConvert.PopulateObject(JsonConvert.SerializeObject(sessionValue), SessionAttributes);
+            }
+        }
+
     }
 }

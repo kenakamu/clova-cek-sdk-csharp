@@ -35,32 +35,6 @@ namespace CEK.CSharp.Tests.Models
             Assert.Null(target.GetSessionAttributeAs<SessionType>());
         }
 
-        [Fact]
-        public void TypeSafeWriteSessionAttributeTest()
-        {
-            var target = new CEKRequest
-            {
-                Session = new Session(),
-            };
-            var sessionValue = new SessionType
-            {
-                A = "a value",
-                B = "b value",
-            };
-
-            target.SetSessionAttributeFrom(sessionValue);
-            Assert.Equal("a value", (string)target.GetSessionAttribute("A"));
-            Assert.Equal("b value", (string)target.GetSessionAttribute("B"));
-        }
-
-        [Fact]
-        public void TypeSafeWriteSessionAttributeNullCaseTest()
-        {
-            var target = new CEKRequest();
-            target.SetSessionAttributeFrom(default(SessionType));
-            Assert.Null(target.Session.SessionAttributes);
-        }
-
         class SessionType
         {
             public string A { get; set; }
