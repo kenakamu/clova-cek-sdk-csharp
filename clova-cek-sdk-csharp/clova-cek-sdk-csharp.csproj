@@ -4,6 +4,28 @@
     <TargetFramework>netstandard1.3</TargetFramework>
     <RootNamespace>CEK.CSharp</RootNamespace>
     <AssemblyName>ClovaCEKCSharp</AssemblyName>
+    <Version>0.1.6</Version>
+    <Authors>kenakamu</Authors>
+    <PackageId>CEK.CSharp</PackageId>
+    <Description>Clova Extension Kit C# SDK</Description>
+    <Copyright>MIT</Copyright>
+    <RepositoryUrl>https://github.com/kenakamu/clova-cek-sdk-csharp</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/kenakamu/clova-cek-sdk-csharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/kenakamu/clova-cek-sdk-csharp</PackageProjectUrl>
+    <PackageTags>LINE,CEK</PackageTags>
+    <PackageReleaseNotes>0.1.6 - Move SetSessionAttributesFrom method to appropriate class
+0.1.5 - Target this library as .NET Standard 1.3
+
+0.1.4 - Specify dependencies
+
+0.1.3 - Convert to .NET Standard 1.3
+
+0.1.2 - fix typo
+
+0.1.1 - fix namespace
+
+0.1.0 - initial</PackageReleaseNotes>
+    <Product>Clova Extension Kit C# SDK</Product>
   </PropertyGroup>
 
   <ItemGroup>

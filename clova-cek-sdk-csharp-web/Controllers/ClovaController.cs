@@ -19,11 +19,14 @@ namespace clova_cek_sdk_csharp_web.Controllers
         {
             var request = await client.GetRequest(Request.Headers["SignatureCEK"], Request.Body, true);
             var response = new CEKResponse();
-            
+
             // get session information by specifying default value in case no session information
             var mySessionValue = request.GetSessionAttribute("mySessionKey", "defaultValue");
             // adding session information
             response.AddSession("mySessionKey", "mySessionValue");
+
+            // You can also create your own session object class and pass it to SetSessionAttributesFrom in request.
+            // To retrieve the object, call GetSessionAttributesAs<T>().
 
             switch (request.Request.Type)
             {
