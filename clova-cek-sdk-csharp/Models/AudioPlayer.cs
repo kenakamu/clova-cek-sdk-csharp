@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.IO;
 
 namespace CEK.CSharp.Models
 {
@@ -22,7 +21,7 @@ namespace CEK.CSharp.Models
         /// 再生中のオーディオの詳細情報を保存したオブジェクトplayerActivityの値が"IDLE"の場合、このフィールドが空であることがあります。
         /// </summary>
         [JsonProperty("stream")]
-        public Stream Stream { get; set; }
+        public AudioStreamInfoObject Stream { get; set; }
         /// <summary>
         /// 最近再生したオーディオの全体の長さ。単位はミリ秒で、playerActivityの値が"IDLE"の場合、このフィールドが空であることがあります。
         /// </summary>
